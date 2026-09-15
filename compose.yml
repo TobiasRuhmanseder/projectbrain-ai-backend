@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: projectbrain-core-postgres
+    environment:
+      POSTGRES_DB: projectbrain
+      POSTGRES_USER: projectbrain
+      POSTGRES_PASSWORD: projectbrain
+    ports:
+      - "5432:5432"
+    volumes:
+      - projectbrain_postgres_data:/var/lib/postgresql
+
+volumes:
+  projectbrain_postgres_data:
